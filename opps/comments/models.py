@@ -9,7 +9,3 @@ class Comment(OwnedNotRequired, NotUserPublishable):
     author_email = models.EmailField()
     path = models.CharField(max_length=255)
     body = models.TextField()
-
-    def save(self, *args, **kwargs):
-
-        super(Comment, self).save(*args, **kwargs)
