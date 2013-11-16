@@ -1,0 +1,17 @@
+README.rst
+setup.py
+opps/__init__.py
+opps/comments/__init__.py
+opps/comments/api.py
+opps/comments/conf.py
+opps/comments/models.py
+opps/comments/urls.py
+opps/comments/views.py
+opps/comments/templatetags/__init__.py
+opps/comments/templatetags/comments_tags.py
+opps_comments.egg-info/PKG-INFO
+opps_comments.egg-info/SOURCES.txt
+opps_comments.egg-info/dependency_links.txt
+opps_comments.egg-info/namespace_packages.txt
+opps_comments.egg-info/requires.txt
+opps_comments.egg-info/top_level.txt

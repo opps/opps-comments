@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: opps-comments
+Version: 0.1.0
+Summary: comments App for Opps CMS
+Home-page: http://oppsproject.org
+Author: Bruno Cezar Rocha
+Author-email: rochacbruno@gmail.com
+License: YACOWS LICENSE
+Download-URL: https://github.com/opps/opps-comments/tarball/master
+Description: UNKNOWN
+Keywords: comments opps cms django apps magazines websites
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Framework :: Django
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
