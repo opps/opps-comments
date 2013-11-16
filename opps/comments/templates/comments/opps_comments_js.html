@@ -12,8 +12,6 @@ $(function(){
                 data : postData,
                 success:function(data, textStatus, jqXHR)
                 {
-                    //data: return data from server
-                    //$("#opps_comments").html(data);
                     if (data['success'] == true) {
                        $("form#opps-comment input[type='text']").val("");
                        $("form#opps-comment textarea").val("");
@@ -33,9 +31,21 @@ $(function(){
     function load_internal_comments(){
         var comment_area = $("#opps_comments" );
         //comment_area.empty();
-        comment_area.load( comment_area.attr('data-path'), function() {
+        comment_area.load( comment_area.attr('data-form-path'), function() {
             console.log( "Load was performed." );
             bind_comment_form_submit();
+            path = comment_area.attr('data-path');
+            url = "/api/v1/comment/?format=json&path=" + path;
+            $.get(url, function( data ) {
+                var comments = data.objects;
+                var comment_list = $("#opps_comments_list");
+                for(var i = 0; i < comments.length; ++i)
+                {
+                    var li = $("<li>");
+                    li.html(comments[i].body);
+                    li.appendTo(comment_list);
+                }
+            });
         });
     }
 

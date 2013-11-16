@@ -13,7 +13,8 @@ class CommentsView(FormView):
         if self.request.user.is_authenticated():
             return {"author_name": self.request.user.get_full_name(),
                     "author_email": self.request.user.email,
-                    "path": self.kwargs.get("path")}
+                    "path": self.kwargs.get("path"),
+                    "published": True}
         else:
             return super(CommentsView, self).get_initial()
 

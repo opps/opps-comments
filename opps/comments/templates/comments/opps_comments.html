@@ -1,2 +1,3 @@
  <div id="comment-message" class="alert"></div>
- <div id="opps_comments" data-path="{% url 'comments:comments' path=request.path %}">OPPS COMMENTS:</div>
+ <div id="opps_comments" data-path="{{ request.path }}" data-form-path="{% url 'comments:comments' path=request.path %}">OPPS COMMENTS:</div>
+ <ul id="opps_comments_list"></ul>
