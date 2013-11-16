@@ -4,6 +4,7 @@ opps/__init__.py
 opps/comments/__init__.py
 opps/comments/api.py
 opps/comments/conf.py
+opps/comments/forms.py
 opps/comments/models.py
 opps/comments/urls.py
 opps/comments/views.py

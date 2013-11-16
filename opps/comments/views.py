@@ -21,6 +21,7 @@ class CommentsView(FormView):
         """
         If the form is valid, redirect to the supplied URL.
         """
+        form.save()
         return JSONResponse(
             {
                 "success": True,
