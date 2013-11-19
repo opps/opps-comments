@@ -15,7 +15,8 @@ def load_comments(context):
        },
        "facebook": {
           "APP_ID": "123456"
-       }
+       },
+       "google": {}
     }
     """
 

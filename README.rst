@@ -32,7 +32,8 @@ Add Opps Comments credentials on your django settings:
         },
         "facebook": {
             "APP_ID": "123456"
-        }
+        },
+        "google": {}
     }
 
 
