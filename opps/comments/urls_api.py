@@ -1,17 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-from django.conf.urls import patterns, url, include
-from tastypie.api import Api
+from django.conf.urls import patterns, url
 
-from .api import Comment
+from piston.resource import Resource
+
+from .api import CommentHandler
 
 
-_api = Api(api_name=u"{}".format("v1"))
-_api.register(Comment())
-
+comments = Resource(handler=CommentHandler)
 
 urlpatterns = patterns(
     '',
-    url(r'^api/', include(_api.urls)),
+    url(r'^api/comments/$', comments),
 )
