@@ -1,3 +1,4 @@
+{% load mptt_tags %}
 <script type="text/javascript">
 $(function(){
 
@@ -30,14 +31,12 @@ $(function(){
 
     function load_internal_comments(){
         var comment_area = $("#opps_comments" );
-        //comment_area.empty();
         comment_area.load( comment_area.attr('data-form-path'), function() {
-            console.log( "Load was performed." );
             bind_comment_form_submit();
             path = comment_area.attr('data-path');
             url = "/api/comments/?path=" + path;
             $.get(url, function( data ) {
-                var comments = data.objects;
+                var comments = data;
                 var comment_list = $("#opps_comments_list");
                 for(var i = 0; i < comments.length; ++i)
                 {
