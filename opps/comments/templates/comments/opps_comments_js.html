@@ -29,6 +29,34 @@ $(function(){
         })
     }
 
+    // Function to handle comment add
+    function addItem(item, parent){
+        var li = $("<li>");
+        li.html(item.body);
+        li.appendTo(parent);
+        // TODO: add reply here
+        return li;
+    }
+
+    // Function to iterate items and recurse when necessary
+    // Will call many times addItem(itemData, parentDOM)
+    // Level is useless here used only to debug recursion
+    function iterate(parent, items, level){
+        var handler = null;
+        var item = null;
+        for(var i = 0; i < items.length; ++i){
+            item = items[i];
+            handler = addItem(item, parent);
+            try{
+                var _parent = $('<ul>');
+                iterate(_parent, item.comments, level+1);
+                _parent.appendTo(handler);
+            } catch(err){
+                // No comments on 'item'
+            }
+        }
+    }
+
     function load_internal_comments(){
         var comment_area = $("#opps_comments" );
         comment_area.load( comment_area.attr('data-form-path'), function() {
@@ -36,14 +64,7 @@ $(function(){
             path = comment_area.attr('data-path');
             url = "/api/comments/?path=" + path;
             $.get(url, function( data ) {
-                var comments = data;
-                var comment_list = $("#opps_comments_list");
-                for(var i = 0; i < comments.length; ++i)
-                {
-                    var li = $("<li>");
-                    li.html(comments[i].body);
-                    li.appendTo(comment_list);
-                }
+                iterate($("#opps_comments_list"), data, 0);
             });
         });
     }
