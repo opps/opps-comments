@@ -6,4 +6,4 @@
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId={{app_id}}";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-<div class="fb-comments"></div>
+<div class="fb-comments" data-href="{{ request.build_absolute_uri }}"></div>
